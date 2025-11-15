@@ -25,23 +25,23 @@
     {% embed '@Gui/Partials/widget.twig' with { widget_title: 'General' | trans } %}
         {% block widget_content %}
             <div class="row form-group">
-                <div class="col-xs-2"><b>{{ 'Name' | trans }}</b></div>
-                <div class="col-xs-10">{{ merchantCommission.name }}</div>
+                <div class="col-sm-2"><b>{{ 'Name' | trans }}</b></div>
+                <div class="col-sm-10">{{ merchantCommission.name }}</div>
             </div>
 
             <div class="row form-group">
-                <div class="col-xs-2"><b>{{ 'Description' | trans }}</b></div>
-                <div class="col-xs-10">{{ merchantCommission.description }}</div>
+                <div class="col-sm-2"><b>{{ 'Description' | trans }}</b></div>
+                <div class="col-sm-10">{{ merchantCommission.description }}</div>
             </div>
 
             <div class="row form-group">
-                <div class="col-xs-2"><b>{{ 'Valid From' | trans }}</b></div>
-                <div class="col-xs-10">{{ merchantCommission.validFrom | formatDateTime }}</div>
+                <div class="col-sm-2"><b>{{ 'Valid From' | trans }}</b></div>
+                <div class="col-sm-10">{{ merchantCommission.validFrom | formatDateTime }}</div>
             </div>
 
             <div class="row form-group">
-                <div class="col-xs-2"><b>{{ 'Valid To' | trans }}</b></div>
-                <div class="col-xs-10">{{ merchantCommission.validTo | formatDateTime }}</div>
+                <div class="col-sm-2"><b>{{ 'Valid To' | trans }}</b></div>
+                <div class="col-sm-10">{{ merchantCommission.validTo | formatDateTime }}</div>
             </div>
 
             {% set statusTitle = 'Active' | trans %}
@@ -53,25 +53,25 @@
             {% endif %}
 
             <div class="row form-group">
-                <div class="col-xs-2"><b>{{ 'Status' | trans }}</b></div>
-                <div class="col-xs-10">
+                <div class="col-sm-2"><b>{{ 'Status' | trans }}</b></div>
+                <div class="col-sm-10">
                     <span class="label {{ statusLabelClass }}">{{ statusTitle }}</span>
                 </div>
             </div>
 
             <div class="row form-group">
-                <div class="col-xs-2"><b>{{ 'Priority' | trans }}</b></div>
-                <div class="col-xs-10">{{ merchantCommission.priority }}</div>
+                <div class="col-sm-2"><b>{{ 'Priority' | trans }}</b></div>
+                <div class="col-sm-10">{{ merchantCommission.priority }}</div>
             </div>
 
             <div class="row form-group">
-                <div class="col-xs-2"><b>{{ 'Group' | trans }}</b></div>
-                <div class="col-xs-10">{{ merchantCommission.merchantCommissionGroup.name }}</div>
+                <div class="col-sm-2"><b>{{ 'Group' | trans }}</b></div>
+                <div class="col-sm-10">{{ merchantCommission.merchantCommissionGroup.name }}</div>
             </div>
 
             <div class="row form-group">
-                <div class="col-xs-2"><b>{{ 'Store Relation' | trans }}</b></div>
-                <div class="col-xs-10">
+                <div class="col-sm-2"><b>{{ 'Store Relation' | trans }}</b></div>
+                <div class="col-sm-10">
                     {% for store in merchantCommission.storeRelation.stores %}
                         <span class="label label-info">{{ store.name }}</span>
                     {% endfor %}
@@ -83,24 +83,24 @@
     {% embed '@Gui/Partials/widget.twig' with { widget_title: 'Merchant Commission Calculation' | trans } %}
         {% block widget_content %}
             <div class="row form-group">
-                <div class="col-xs-2"><b>{{ 'Calculator Type' | trans }}</b></div>
-                <div class="col-xs-10">{{ merchantCommission.calculatorTypePlugin }}</div>
+                <div class="col-sm-2"><b>{{ 'Calculator Type' | trans }}</b></div>
+                <div class="col-sm-10">{{ merchantCommission.calculatorTypePlugin }}</div>
             </div>
 
             <div class="row form-group">
-                <div class="col-xs-2"><b>{{ 'Item Condition' | trans }}</b></div>
-                <div class="col-xs-10">{{ merchantCommission.itemCondition }}</div>
+                <div class="col-sm-2"><b>{{ 'Item Condition' | trans }}</b></div>
+                <div class="col-sm-10">{{ merchantCommission.itemCondition }}</div>
             </div>
 
             <div class="row form-group">
-                <div class="col-xs-2"><b>{{ 'Order Condition' | trans }}</b></div>
-                <div class="col-xs-10">{{ merchantCommission.orderCondition }}</div>
+                <div class="col-sm-2"><b>{{ 'Order Condition' | trans }}</b></div>
+                <div class="col-sm-10">{{ merchantCommission.orderCondition }}</div>
             </div>
 
             {% if merchantCommission.merchantCommissionAmounts.count == 0 %}
                 <div class="row form-group">
-                    <div class="col-xs-2"><b>{{ 'Amount' | trans }}</b></div>
-                    <div class="col-xs-10">{{ merchantCommission.amount }}</div>
+                    <div class="col-sm-2"><b>{{ 'Amount' | trans }}</b></div>
+                    <div class="col-sm-10">{{ merchantCommission.amount }}</div>
                 </div>
             {% endif %}
         {% endblock %}
@@ -111,15 +111,15 @@
             {% block widget_content %}
                 {% for merchantCommissionAmount in merchantCommission.merchantCommissionAmounts %}
                     <div class="row form-group">
-                        <div class="col-xs-2"><b>{{ 'Gross' | trans }}</b></div>
-                        <div class="col-xs-10">
+                        <div class="col-sm-2"><b>{{ 'Gross' | trans }}</b></div>
+                        <div class="col-sm-10">
                             {{ merchantCommissionAmount.grossAmount }}
                         </div>
                     </div>
 
                     <div class="row form-group">
-                        <div class="col-xs-2"><b>{{ 'Net' | trans }}</b></div>
-                        <div class="col-xs-10">
+                        <div class="col-sm-2"><b>{{ 'Net' | trans }}</b></div>
+                        <div class="col-sm-10">
                             {{ merchantCommissionAmount.netAmount }}
                         </div>
                     </div>
@@ -132,8 +132,8 @@
         {% embed '@Gui/Partials/widget.twig' with { widget_title: 'Merchant Allow List' | trans } %}
             {% block widget_content %}
                 <div class="row form-group">
-                    <div class="col-xs-2"><b>{{ 'Merchants' | trans }}</b></div>
-                    <div class="col-xs-10">
+                    <div class="col-sm-2"><b>{{ 'Merchants' | trans }}</b></div>
+                    <div class="col-sm-10">
                         {% for merchant in merchantCommission.merchants %}
                             <span class="label label-info">{{ merchant.name }}</span>
                         {% endfor %}

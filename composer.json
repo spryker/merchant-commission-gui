@@ -6,7 +6,7 @@
     "require": {
         "php": ">=8.3",
         "spryker/glossary": "^3.0.0",
-        "spryker/gui": "^3.45.0",
+        "spryker/gui": "^4.0.0",
         "spryker/kernel": "^3.30.0",
         "spryker/merchant-commission": "^1.0.0",
         "spryker/merchant-commission-gui-extension": "^1.0.0",
