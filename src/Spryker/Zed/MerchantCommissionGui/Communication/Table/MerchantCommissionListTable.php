@@ -302,7 +302,7 @@ class MerchantCommissionListTable extends AbstractTable
     protected function formatStatusLabel(bool $isActive): string
     {
         return $isActive
-            ? $this->generateLabel('Active', 'label-info')
+            ? $this->generateLabel('Active', 'label-primary')
             : $this->generateLabel('Inactive', 'label-danger');
     }
 
