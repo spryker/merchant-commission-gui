@@ -27,7 +27,7 @@ class MerchantCommissionGuiToUtilCsvServiceBridge implements MerchantCommissionG
     /**
      * @param \Symfony\Component\HttpFoundation\File\UploadedFile $file
      *
-     * @return list<list<string>>
+     * @return array<array<string>>
      */
     public function readUploadedFile(UploadedFile $file): array
     {

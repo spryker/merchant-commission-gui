@@ -39,7 +39,7 @@ class MerchantCommissionCsvReader implements MerchantCommissionCsvReaderInterfac
     /**
      * @param \Symfony\Component\HttpFoundation\File\UploadedFile $uploadedFile
      *
-     * @return list<\Generated\Shared\Transfer\MerchantCommissionTransfer>
+     * @return array<int, \Generated\Shared\Transfer\MerchantCommissionTransfer>
      */
     public function readMerchantCommissionTransfersFromCsvFile(UploadedFile $uploadedFile): array
     {

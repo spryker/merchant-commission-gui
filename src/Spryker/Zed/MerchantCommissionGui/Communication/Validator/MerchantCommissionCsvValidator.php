@@ -80,7 +80,7 @@ class MerchantCommissionCsvValidator implements MerchantCommissionCsvValidatorIn
     }
 
     /**
-     * @param list<list<string>> $importData
+     * @param array<array<string>> $importData
      * @param \ArrayObject<array-key, \Generated\Shared\Transfer\ErrorTransfer> $errorTransfers
      *
      * @return \ArrayObject<array-key, \Generated\Shared\Transfer\ErrorTransfer>
@@ -107,7 +107,7 @@ class MerchantCommissionCsvValidator implements MerchantCommissionCsvValidatorIn
     }
 
     /**
-     * @param list<list<string>> $importData
+     * @param array<array<string>> $importData
      * @param \ArrayObject<array-key, \Generated\Shared\Transfer\ErrorTransfer> $errorTransfers
      *
      * @return \ArrayObject<array-key, \Generated\Shared\Transfer\ErrorTransfer>
