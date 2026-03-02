@@ -114,10 +114,6 @@ class MerchantCommissionListTable extends AbstractTable
      */
     protected MerchantCommissionGuiToUtilDateTimeServiceInterface $utilDateTimeService;
 
-    /**
-     * @param \Orm\Zed\MerchantCommission\Persistence\SpyMerchantCommissionQuery $merchantCommissionQuery
-     * @param \Spryker\Zed\MerchantCommissionGui\Dependency\Service\MerchantCommissionGuiToUtilDateTimeServiceInterface $utilDateTimeService
-     */
     public function __construct(
         SpyMerchantCommissionQuery $merchantCommissionQuery,
         MerchantCommissionGuiToUtilDateTimeServiceInterface $utilDateTimeService
@@ -126,11 +122,6 @@ class MerchantCommissionListTable extends AbstractTable
         $this->utilDateTimeService = $utilDateTimeService;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function configure(TableConfiguration $config): TableConfiguration
     {
         $config = $this->configureHeader($config);
@@ -145,11 +136,6 @@ class MerchantCommissionListTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function configureHeader(TableConfiguration $config): TableConfiguration
     {
         $config->setHeader([
@@ -166,11 +152,6 @@ class MerchantCommissionListTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $configuration
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function configureSortableColumns(TableConfiguration $configuration): TableConfiguration
     {
         $configuration->setSortable([
@@ -184,11 +165,6 @@ class MerchantCommissionListTable extends AbstractTable
         return $configuration;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $configuration
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function configureSearchableColumns(TableConfiguration $configuration): TableConfiguration
     {
         $configuration->setSearchable([
@@ -199,11 +175,6 @@ class MerchantCommissionListTable extends AbstractTable
         return $configuration;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function configureRawColumns(TableConfiguration $config): TableConfiguration
     {
         $config->setRawColumns([
@@ -215,9 +186,6 @@ class MerchantCommissionListTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @return string
-     */
     protected function getTableUrl(): string
     {
         return Url::generate(
@@ -243,9 +211,6 @@ class MerchantCommissionListTable extends AbstractTable
         return $rows;
     }
 
-    /**
-     * @return \Orm\Zed\MerchantCommission\Persistence\SpyMerchantCommissionQuery
-     */
     protected function prepareQuery(): SpyMerchantCommissionQuery
     {
         /** @var \Orm\Zed\MerchantCommission\Persistence\SpyMerchantCommissionQuery $merchantCommissionQuery */
@@ -294,11 +259,6 @@ class MerchantCommissionListTable extends AbstractTable
         );
     }
 
-    /**
-     * @param bool $isActive
-     *
-     * @return string
-     */
     protected function formatStatusLabel(bool $isActive): string
     {
         return $isActive
@@ -306,11 +266,6 @@ class MerchantCommissionListTable extends AbstractTable
             : $this->generateLabel('Inactive', 'label-danger');
     }
 
-    /**
-     * @param string $storeNames
-     *
-     * @return string
-     */
     protected function formatStores(string $storeNames): string
     {
         $storeNamesExploded = explode(',', $storeNames);

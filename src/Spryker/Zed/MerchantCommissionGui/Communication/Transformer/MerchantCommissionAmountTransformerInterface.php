@@ -9,12 +9,6 @@ namespace Spryker\Zed\MerchantCommissionGui\Communication\Transformer;
 
 interface MerchantCommissionAmountTransformerInterface
 {
-    /**
-     * @param string $merchantCommissionCalculatorPluginType
-     * @param float $amount
-     *
-     * @return int
-     */
     public function transformMerchantCommissionAmount(
         string $merchantCommissionCalculatorPluginType,
         float $amount

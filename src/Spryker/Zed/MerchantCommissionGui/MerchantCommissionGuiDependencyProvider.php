@@ -52,11 +52,6 @@ class MerchantCommissionGuiDependencyProvider extends AbstractBundleDependencyPr
      */
     public const PLUGIN_MERCHANT_COMMISSION_EXPORT = 'PLUGIN_MERCHANT_COMMISSION_EXPORT';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $container = parent::provideCommunicationLayerDependencies($container);
@@ -70,11 +65,6 @@ class MerchantCommissionGuiDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantCommissionFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT_COMMISSION, function (Container $container) {
@@ -86,11 +76,6 @@ class MerchantCommissionGuiDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addGlossaryFacade(Container $container): Container
     {
         $container->set(static::FACADE_GLOSSARY, function (Container $container) {
@@ -100,11 +85,6 @@ class MerchantCommissionGuiDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addUtilDateTimeService(Container $container): Container
     {
         $container->set(static::SERVICE_UTIL_DATE_TIME, function (Container $container) {
@@ -116,11 +96,6 @@ class MerchantCommissionGuiDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addUtilCsvService(Container $container): Container
     {
         $container->set(static::SERVICE_UTIL_CSV, function (Container $container) {
@@ -146,11 +121,6 @@ class MerchantCommissionGuiDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantCommissionExportPlugin(Container $container): Container
     {
         $container->set(static::PLUGIN_MERCHANT_COMMISSION_EXPORT, function () {

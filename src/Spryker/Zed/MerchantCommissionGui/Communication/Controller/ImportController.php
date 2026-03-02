@@ -74,9 +74,6 @@ class ImportController extends AbstractController
         ]);
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\StreamedResponse
-     */
     public function downloadTemplateAction(): StreamedResponse
     {
         $streamedResponse = new StreamedResponse();
@@ -165,9 +162,6 @@ class ImportController extends AbstractController
         return $tableData;
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     protected function successfulImportRedirect(): RedirectResponse
     {
         $this->addSuccessMessage('Merchant commissions imported successfully.');

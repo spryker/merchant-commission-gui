@@ -17,20 +17,11 @@ class MerchantCommissionAmountTransformer implements MerchantCommissionAmountTra
      */
     protected MerchantCommissionGuiToMerchantCommissionFacadeInterface $merchantCommissionFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantCommissionGui\Dependency\Facade\MerchantCommissionGuiToMerchantCommissionFacadeInterface $merchantCommissionFacade
-     */
     public function __construct(MerchantCommissionGuiToMerchantCommissionFacadeInterface $merchantCommissionFacade)
     {
         $this->merchantCommissionFacade = $merchantCommissionFacade;
     }
 
-    /**
-     * @param string $merchantCommissionCalculatorPluginType
-     * @param float $amount
-     *
-     * @return int
-     */
     public function transformMerchantCommissionAmount(string $merchantCommissionCalculatorPluginType, float $amount): int
     {
         $merchantCommissionAmountTransformerRequestTransfer = (new MerchantCommissionAmountTransformerRequestTransfer())

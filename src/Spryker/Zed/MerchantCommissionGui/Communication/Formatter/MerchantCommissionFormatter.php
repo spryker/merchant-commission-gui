@@ -22,19 +22,11 @@ class MerchantCommissionFormatter implements MerchantCommissionFormatterInterfac
      */
     protected MerchantCommissionGuiToMerchantCommissionFacadeInterface $merchantCommissionFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantCommissionGui\Dependency\Facade\MerchantCommissionGuiToMerchantCommissionFacadeInterface $merchantCommissionFacade
-     */
     public function __construct(MerchantCommissionGuiToMerchantCommissionFacadeInterface $merchantCommissionFacade)
     {
         $this->merchantCommissionFacade = $merchantCommissionFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionTransfer $merchantCommissionTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantCommissionViewTransfer
-     */
     public function formatMerchantCommissionForView(MerchantCommissionTransfer $merchantCommissionTransfer): MerchantCommissionViewTransfer
     {
         $merchantCommissionViewTransfer = (new MerchantCommissionViewTransfer())->fromArray($merchantCommissionTransfer->toArray(), true);
@@ -42,12 +34,6 @@ class MerchantCommissionFormatter implements MerchantCommissionFormatterInterfac
         return $this->formatMerchantCommissionAmounts($merchantCommissionTransfer, $merchantCommissionViewTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionTransfer $merchantCommissionTransfer
-     * @param \Generated\Shared\Transfer\MerchantCommissionViewTransfer $merchantCommissionViewTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantCommissionViewTransfer
-     */
     protected function formatMerchantCommissionAmounts(
         MerchantCommissionTransfer $merchantCommissionTransfer,
         MerchantCommissionViewTransfer $merchantCommissionViewTransfer
@@ -81,12 +67,6 @@ class MerchantCommissionFormatter implements MerchantCommissionFormatterInterfac
         return $merchantCommissionViewTransfer->setMerchantCommissionAmounts($merchantCommissionAmountViewTransfers);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionAmountTransfer $merchantCommissionAmountTransfer
-     * @param \Generated\Shared\Transfer\MerchantCommissionAmountFormatRequestTransfer $merchantCommissionAmountFormatRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantCommissionAmountViewTransfer
-     */
     protected function formatMerchantCommissionAmountTransfer(
         MerchantCommissionAmountTransfer $merchantCommissionAmountTransfer,
         MerchantCommissionAmountFormatRequestTransfer $merchantCommissionAmountFormatRequestTransfer

@@ -27,9 +27,6 @@ class ListController extends AbstractController
         ]);
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     public function tableDataAction(): JsonResponse
     {
         $merchantCommissionListTable = $this->getFactory()->createMerchantCommissionListTable();

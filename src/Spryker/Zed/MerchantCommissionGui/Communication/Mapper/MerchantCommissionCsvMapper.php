@@ -69,9 +69,6 @@ class MerchantCommissionCsvMapper implements MerchantCommissionCsvMapperInterfac
      */
     protected MerchantCommissionAmountTransformerInterface $merchantCommissionAmountTransformer;
 
-    /**
-     * @param \Spryker\Zed\MerchantCommissionGui\Communication\Transformer\MerchantCommissionAmountTransformerInterface $merchantCommissionAmountTransformer
-     */
     public function __construct(MerchantCommissionAmountTransformerInterface $merchantCommissionAmountTransformer)
     {
         $this->merchantCommissionAmountTransformer = $merchantCommissionAmountTransformer;

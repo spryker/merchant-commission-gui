@@ -54,9 +54,6 @@ class ExportController extends AbstractController
      */
     protected const URL_MERCHANT_RELATION_REQUEST_LIST = '/merchant-commission-gui/list';
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
     public function indexAction(): Response
     {
         $merchantCommissionExportRequestTransfer = $this->createMerchantCommissionExportRequestTransfer();
@@ -81,9 +78,6 @@ class ExportController extends AbstractController
         return $streamedResponse->setStatusCode(Response::HTTP_OK);
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\MerchantCommissionExportRequestTransfer
-     */
     protected function createMerchantCommissionExportRequestTransfer(): MerchantCommissionExportRequestTransfer
     {
         return (new MerchantCommissionExportRequestTransfer())
@@ -93,11 +87,6 @@ class ExportController extends AbstractController
             ->setFields($this->getFactory()->getConfig()->getCsvFileRequiredColumnsList());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionExportResponseTransfer $merchantCommissionExportResponseTransfer
-     *
-     * @return void
-     */
     protected function addErrorMessages(MerchantCommissionExportResponseTransfer $merchantCommissionExportResponseTransfer): void
     {
         foreach ($merchantCommissionExportResponseTransfer->getErrors() as $errorTransfer) {

@@ -36,9 +36,6 @@ use Symfony\Component\Form\FormInterface;
  */
 class MerchantCommissionGuiCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\MerchantCommissionGui\Communication\Table\MerchantCommissionListTable
-     */
     public function createMerchantCommissionListTable(): MerchantCommissionListTable
     {
         return new MerchantCommissionListTable(
@@ -47,11 +44,6 @@ class MerchantCommissionGuiCommunicationFactory extends AbstractCommunicationFac
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionCollectionResponseTransfer $merchantCommissionCollectionResponseTransfer
-     *
-     * @return \Spryker\Zed\MerchantCommissionGui\Communication\Table\MerchantCommissionImportErrorTable
-     */
     public function createMerchantCommissionImportErrorTable(
         MerchantCommissionCollectionResponseTransfer $merchantCommissionCollectionResponseTransfer
     ): MerchantCommissionImportErrorTable {
@@ -71,9 +63,6 @@ class MerchantCommissionGuiCommunicationFactory extends AbstractCommunicationFac
         return $this->getFormFactory()->create(MerchantCommissionImportForm::class, [], $options);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantCommissionGui\Communication\Validator\MerchantCommissionCsvValidatorInterface
-     */
     public function createMerchantCommissionCsvValidator(): MerchantCommissionCsvValidatorInterface
     {
         return new MerchantCommissionCsvValidator(
@@ -82,9 +71,6 @@ class MerchantCommissionGuiCommunicationFactory extends AbstractCommunicationFac
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantCommissionGui\Communication\Reader\MerchantCommissionCsvReaderInterface
-     */
     public function createMerchantCommissionCsvReader(): MerchantCommissionCsvReaderInterface
     {
         return new MerchantCommissionCsvReader(
@@ -93,73 +79,46 @@ class MerchantCommissionGuiCommunicationFactory extends AbstractCommunicationFac
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantCommissionGui\Communication\Mapper\MerchantCommissionCsvMapperInterface
-     */
     public function createMerchantCommissionCsvMapper(): MerchantCommissionCsvMapperInterface
     {
         return new MerchantCommissionCsvMapper($this->createMerchantCommissionAmountTransformer());
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantCommissionGui\Communication\Transformer\MerchantCommissionAmountTransformerInterface
-     */
     public function createMerchantCommissionAmountTransformer(): MerchantCommissionAmountTransformerInterface
     {
         return new MerchantCommissionAmountTransformer($this->getMerchantCommissionFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantCommissionGui\Communication\Formatter\MerchantCommissionFormatterInterface
-     */
     public function createMerchantCommissionFormatter(): MerchantCommissionFormatterInterface
     {
         return new MerchantCommissionFormatter($this->getMerchantCommissionFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantCommissionGui\Dependency\Facade\MerchantCommissionGuiToMerchantCommissionFacadeInterface
-     */
     public function getMerchantCommissionFacade(): MerchantCommissionGuiToMerchantCommissionFacadeInterface
     {
         return $this->getProvidedDependency(MerchantCommissionGuiDependencyProvider::FACADE_MERCHANT_COMMISSION);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantCommissionGui\Dependency\Facade\MerchantCommissionGuiToGlossaryFacadeInterface
-     */
     public function getGlossaryFacade(): MerchantCommissionGuiToGlossaryFacadeInterface
     {
         return $this->getProvidedDependency(MerchantCommissionGuiDependencyProvider::FACADE_GLOSSARY);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantCommissionGui\Dependency\Service\MerchantCommissionGuiToUtilDateTimeServiceInterface
-     */
     public function getUtilDateTimeService(): MerchantCommissionGuiToUtilDateTimeServiceInterface
     {
         return $this->getProvidedDependency(MerchantCommissionGuiDependencyProvider::SERVICE_UTIL_DATE_TIME);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantCommissionGui\Dependency\Service\MerchantCommissionGuiToUtilCsvServiceInterface
-     */
     public function getUtilCsvService(): MerchantCommissionGuiToUtilCsvServiceInterface
     {
         return $this->getProvidedDependency(MerchantCommissionGuiDependencyProvider::SERVICE_UTIL_CSV);
     }
 
-    /**
-     * @return \Orm\Zed\MerchantCommission\Persistence\SpyMerchantCommissionQuery
-     */
     public function getMerchantCommissionPropelQuery(): SpyMerchantCommissionQuery
     {
         return $this->getProvidedDependency(MerchantCommissionGuiDependencyProvider::PROPEL_QUERY_MERCHANT_COMMISSION);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantCommissionGuiExtension\Communication\Dependency\Plugin\MerchantCommissionExportPluginInterface
-     */
     public function getMerchantCommissionExportPlugin(): MerchantCommissionExportPluginInterface
     {
         return $this->getProvidedDependency(MerchantCommissionGuiDependencyProvider::PLUGIN_MERCHANT_COMMISSION_EXPORT);

@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\MerchantCommissionViewTransfer;
 
 interface MerchantCommissionFormatterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionTransfer $merchantCommissionTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantCommissionViewTransfer
-     */
     public function formatMerchantCommissionForView(MerchantCommissionTransfer $merchantCommissionTransfer): MerchantCommissionViewTransfer;
 }

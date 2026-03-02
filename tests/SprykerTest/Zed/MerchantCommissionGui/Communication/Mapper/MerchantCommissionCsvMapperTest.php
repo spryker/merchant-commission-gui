@@ -137,9 +137,6 @@ class MerchantCommissionCsvMapperTest extends Unit
      */
     protected MerchantCommissionGuiCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     public function testMapMerchantCommissionRowDataToMerchantCommissionTransferReturnsCorrectlyMappedMerchantCommissionTransfer(): void
     {
         // Arrange
@@ -211,17 +208,11 @@ class MerchantCommissionCsvMapperTest extends Unit
         ];
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantCommissionGui\Communication\Mapper\MerchantCommissionCsvMapperInterface
-     */
     protected function createMerchantCommissionCsvMapper(): MerchantCommissionCsvMapperInterface
     {
         return new MerchantCommissionCsvMapper($this->getMerchantCommissionAmountTransformerMock());
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantCommissionGui\Communication\Transformer\MerchantCommissionAmountTransformerInterface
-     */
     protected function getMerchantCommissionAmountTransformerMock(): MerchantCommissionAmountTransformerInterface
     {
         $merchantCommissionAmountTransformerMock = $this->getMockBuilder(MerchantCommissionAmountTransformerInterface::class)

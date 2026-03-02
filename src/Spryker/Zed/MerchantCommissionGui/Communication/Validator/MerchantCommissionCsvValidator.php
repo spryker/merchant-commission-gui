@@ -50,10 +50,6 @@ class MerchantCommissionCsvValidator implements MerchantCommissionCsvValidatorIn
      */
     protected MerchantCommissionGuiToUtilCsvServiceInterface $utilCsvService;
 
-    /**
-     * @param \Spryker\Zed\MerchantCommissionGui\MerchantCommissionGuiConfig $merchantCommissionGuiConfig
-     * @param \Spryker\Zed\MerchantCommissionGui\Dependency\Service\MerchantCommissionGuiToUtilCsvServiceInterface $utilCsvService
-     */
     public function __construct(
         MerchantCommissionGuiConfig $merchantCommissionGuiConfig,
         MerchantCommissionGuiToUtilCsvServiceInterface $utilCsvService

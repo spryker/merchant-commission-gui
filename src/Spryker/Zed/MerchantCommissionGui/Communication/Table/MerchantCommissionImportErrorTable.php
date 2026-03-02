@@ -44,10 +44,6 @@ class MerchantCommissionImportErrorTable extends AbstractTable
      */
     protected MerchantCommissionGuiToGlossaryFacadeInterface $glossaryFacade;
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionCollectionResponseTransfer $merchantCommissionCollectionResponseTransfer
-     * @param \Spryker\Zed\MerchantCommissionGui\Dependency\Facade\MerchantCommissionGuiToGlossaryFacadeInterface $glossaryFacade
-     */
     public function __construct(
         MerchantCommissionCollectionResponseTransfer $merchantCommissionCollectionResponseTransfer,
         MerchantCommissionGuiToGlossaryFacadeInterface $glossaryFacade
@@ -56,11 +52,6 @@ class MerchantCommissionImportErrorTable extends AbstractTable
         $this->glossaryFacade = $glossaryFacade;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function configure(TableConfiguration $config): TableConfiguration
     {
         $this->disableSearch();

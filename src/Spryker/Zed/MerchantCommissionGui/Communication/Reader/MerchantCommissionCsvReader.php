@@ -24,10 +24,6 @@ class MerchantCommissionCsvReader implements MerchantCommissionCsvReaderInterfac
      */
     protected MerchantCommissionGuiToUtilCsvServiceInterface $utilCsvService;
 
-    /**
-     * @param \Spryker\Zed\MerchantCommissionGui\Communication\Mapper\MerchantCommissionCsvMapperInterface $merchantCommissionCsvMapper
-     * @param \Spryker\Zed\MerchantCommissionGui\Dependency\Service\MerchantCommissionGuiToUtilCsvServiceInterface $utilCsvService
-     */
     public function __construct(
         MerchantCommissionCsvMapperInterface $merchantCommissionCsvMapper,
         MerchantCommissionGuiToUtilCsvServiceInterface $utilCsvService

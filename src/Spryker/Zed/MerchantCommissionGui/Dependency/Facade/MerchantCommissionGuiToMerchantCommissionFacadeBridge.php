@@ -29,33 +29,18 @@ class MerchantCommissionGuiToMerchantCommissionFacadeBridge implements MerchantC
         $this->merchantCommissionFacade = $merchantCommissionFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionCriteriaTransfer $merchantCommissionCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantCommissionCollectionTransfer
-     */
     public function getMerchantCommissionCollection(
         MerchantCommissionCriteriaTransfer $merchantCommissionCriteriaTransfer
     ): MerchantCommissionCollectionTransfer {
         return $this->merchantCommissionFacade->getMerchantCommissionCollection($merchantCommissionCriteriaTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionCollectionRequestTransfer $merchantCommissionCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantCommissionCollectionResponseTransfer
-     */
     public function importMerchantCommissionCollection(
         MerchantCommissionCollectionRequestTransfer $merchantCommissionCollectionRequestTransfer
     ): MerchantCommissionCollectionResponseTransfer {
         return $this->merchantCommissionFacade->importMerchantCommissionCollection($merchantCommissionCollectionRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionAmountTransformerRequestTransfer $merchantCommissionAmountTransformerRequestTransfer
-     *
-     * @return int
-     */
     public function transformMerchantCommissionAmountForPersistence(
         MerchantCommissionAmountTransformerRequestTransfer $merchantCommissionAmountTransformerRequestTransfer
     ): int {
@@ -64,11 +49,6 @@ class MerchantCommissionGuiToMerchantCommissionFacadeBridge implements MerchantC
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionAmountFormatRequestTransfer $merchantCommissionAmountFormatRequestTransfer
-     *
-     * @return string
-     */
     public function formatMerchantCommissionAmount(
         MerchantCommissionAmountFormatRequestTransfer $merchantCommissionAmountFormatRequestTransfer
     ): string {

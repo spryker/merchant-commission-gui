@@ -24,11 +24,6 @@ class MerchantCommissionImportForm extends AbstractType
      */
     public const FIELD_FILE_UPLOAD = 'file_upload';
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
@@ -71,9 +66,6 @@ class MerchantCommissionImportForm extends AbstractType
         return $this;
     }
 
-    /**
-     * @return string
-     */
     protected function getAcceptMimeTypes(): string
     {
         $acceptMimeTypes = [];

@@ -16,38 +16,18 @@ use Generated\Shared\Transfer\MerchantCommissionCriteriaTransfer;
 
 interface MerchantCommissionGuiToMerchantCommissionFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionCriteriaTransfer $merchantCommissionCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantCommissionCollectionTransfer
-     */
     public function getMerchantCommissionCollection(
         MerchantCommissionCriteriaTransfer $merchantCommissionCriteriaTransfer
     ): MerchantCommissionCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionCollectionRequestTransfer $merchantCommissionCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantCommissionCollectionResponseTransfer
-     */
     public function importMerchantCommissionCollection(
         MerchantCommissionCollectionRequestTransfer $merchantCommissionCollectionRequestTransfer
     ): MerchantCommissionCollectionResponseTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionAmountTransformerRequestTransfer $merchantCommissionAmountTransformerRequestTransfer
-     *
-     * @return int
-     */
     public function transformMerchantCommissionAmountForPersistence(
         MerchantCommissionAmountTransformerRequestTransfer $merchantCommissionAmountTransformerRequestTransfer
     ): int;
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionAmountFormatRequestTransfer $merchantCommissionAmountFormatRequestTransfer
-     *
-     * @return string
-     */
     public function formatMerchantCommissionAmount(
         MerchantCommissionAmountFormatRequestTransfer $merchantCommissionAmountFormatRequestTransfer
     ): string;

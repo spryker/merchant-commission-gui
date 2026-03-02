@@ -74,11 +74,6 @@ class ViewController extends AbstractController
         ]);
     }
 
-    /**
-     * @param int $idMerchantCommission
-     *
-     * @return \Generated\Shared\Transfer\MerchantCommissionCriteriaTransfer
-     */
     protected function createMerchantCommissionCriteriaTransfer(int $idMerchantCommission): MerchantCommissionCriteriaTransfer
     {
         $merchantCommissionConditionsTransfer = (new MerchantCommissionConditionsTransfer())

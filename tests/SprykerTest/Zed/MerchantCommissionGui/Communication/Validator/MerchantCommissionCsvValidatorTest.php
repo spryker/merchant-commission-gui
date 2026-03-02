@@ -46,9 +46,6 @@ class MerchantCommissionCsvValidatorTest extends Unit
      */
     protected MerchantCommissionGuiCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     public function testValidateMerchantCommissionCsvFileReturnsNoErrorsWhenHeaderIsCorrect(): void
     {
         // Arrange
@@ -64,9 +61,6 @@ class MerchantCommissionCsvValidatorTest extends Unit
         $this->assertCount(0, $errorTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testValidateMerchantCommissionCsvFileReturnsErrorWhenHeaderIsInvalid(): void
     {
         // Arrange
@@ -86,9 +80,6 @@ class MerchantCommissionCsvValidatorTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testValidateMerchantCommissionCsvFileReturnsErrorWhenColumnsAreMismatchedBetweenHeaderAndDataRows(): void
     {
         // Arrange
@@ -108,9 +99,6 @@ class MerchantCommissionCsvValidatorTest extends Unit
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantCommissionGui\Communication\Validator\MerchantCommissionCsvValidatorInterface
-     */
     protected function createMerchantCommissionCsvValidator(): MerchantCommissionCsvValidatorInterface
     {
         return (new MerchantCommissionCsvValidator(
